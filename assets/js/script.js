@@ -36,9 +36,7 @@ function getWeather(lat, lon) {
 	fetch(apiURL).then(function(response) {
 		if (response.ok) {
 			response.json().then(function(data) {
-				console.log(data);
 				console.log(data.current);
-				console.log(data.current.weather);
 				weatherObj = data.current;
 				displayWeather(weatherObj);
 			});
@@ -47,7 +45,16 @@ function getWeather(lat, lon) {
 }
 
 function displayWeather() {
-	currentConditions = weatherObj[0].main;
+	currentConditions = weatherObj.weather[0].main;
+	currentTemp = weatherObj.temp;
+	currentHumidity = weatherObj.humidity;
+	currentWindSpeed = weatherObj.wind_speed;
+	currentUVI = weatherObj.uvi;
 	console.log(currentConditions);
+	console.log(currentTemp);
+	console.log(currentHumidity);
+	console.log(currentWindSpeed);
+	console.log(currentUVI);
+	
 }
 searchBtnEl.addEventListener("submit", searchSubmitHandler);
