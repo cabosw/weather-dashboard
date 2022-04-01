@@ -1,0 +1,12 @@
+ul {
+    list-style: none;
+    border: black;
+}
+
+form {
+    border: black;
+}
+#current-weather {
+    border: black;
+}
+
